@@ -1,5 +1,9 @@
 <section id="post-<%= post.id %>">
   <div class="post contain">
+    <aside class="published-at">
+      <%= post.created_at.strftime "%B %e, %Y %l:%M %P" %>
+    </aside>
+
     <%- if post.external? -%>
       <h1 class="external">
         <% if @single_post %><%= link_to post.title, post.url %><% else %><%= link_to post.title, post.url %><% end %>

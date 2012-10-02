@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   layout :choose_layout
 
   def index
-    @posts = Post.page(params[:page]).per(10).where(draft:false)
+    @posts = Post.page(params[:page]).per(10).where(draft:false).order("created_at")
 
     respond_to do |format|
       format.html
@@ -23,8 +23,8 @@ class PostsController < ApplicationController
   def admin
     @no_header = true
     @post = Post.new
-    @published = Post.where(draft:false).page(params[:post_page]).per(20)
-    @drafts = Post.where(draft:true).page(params[:draft_page]).per(20)
+    @published = Post.where(draft:false).order("created_at").page(params[:post_page]).per(20)
+    @drafts = Post.where(draft:true).order("created_at").page(params[:draft_page]).per(20)
 
     respond_to do |format|
       format.html
