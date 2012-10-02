@@ -5,6 +5,7 @@
   &:after { content: ''; display: table; clear: both; }
 }
 $linkhover: purple;
+$pagewidth: 720px;
 
 body, textarea, pre, input {
   font-family: 'Antic Slab', Georgia, serif;
@@ -16,8 +17,17 @@ body, textarea, pre, input {
 }
 
 .post {
+  &.contain {
+    position: relative;
+    width: $pagewidth;
+  }
   aside.published-at {
-    float: right;
+    position: absolute;
+    top: 35px;
+    right: 0;
+  }
+  .actions {
+    top: 35px;
   }
 }
 
@@ -25,37 +35,49 @@ header {
   @include clearfix;
   padding: 0;
   margin: 5px;
-  width: auto;
+  width: $pagewidth;
+  margin-left: auto;
+  margin-right: auto;
   border: none;
   position: relative;
-  border-bottom: 1px solid #ccc;
-  h1 {
-    padding: 0;
-    margin: 0;
-    a:hover {
-      color: $linkhover;
+  margin-bottom: 60px;
+  /*border-bottom: 1px solid #ccc;*/
+  .container {
+    @include clearfix;
+    display: block;
+    float: left;
+    h1 {
+      padding: 0;
+      margin: 0;
+      a:hover {
+        color: $linkhover;
+      }
+    }
+    & > span {
+      padding: 0;
+      margin: 0;
+      float: left;
     }
   }
-  & > span {
-    padding: 0;
-    margin: 0;
-    float: left;
-  }
   ul {
-    position: absolute;
-    bottom: 0;
-    right: 0;
     @include clearfix;
+
+    float: right;
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 0;*/
     display: block;
     padding: 0;
     margin: 0;
     float: right;
     li {
-      line-height: 35px;
+      display: block;
+      /*line-height: 35px;*/
+      text-align: right;
       padding: 0;
       margin: 0;
-      float: left;
-      margin-left: 4px;
+      /*float: left;*/
+      margin-top: 4px;
       a {
         padding: 0;
         margin: 0;

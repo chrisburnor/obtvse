@@ -5,7 +5,8 @@
   <%= csrf_meta_tag %>
   <%= stylesheet_link_tag 'application' %>
   <meta name="author" content="<%= CONFIG['name'] %>">
-  <link href="/posts.rss" rel="alternate" title="RSS" type="application/rss+xml" />
+  <%#<link href="/posts.rss" rel="alternate" title="RSS" type="application/rss+xml" />%>
+  <link href="http://feeds.feedburner.com/ChrisBurnor" rel="alternate" title="RSS" type="application/rss+xml" />
   <link href='http://fonts.googleapis.com/css?family=Lato:300,900' rel='stylesheet' type='text/css' />
   <link href='http://fonts.googleapis.com/css?family=Antic+Slab' rel='stylesheet' type='text/css'>
 </head>
@@ -13,8 +14,10 @@
 <body class="<%= controller_name %> <%= action_name %>">
   <% unless @no_header %>
   <header>
-    <h1><%= link_to CONFIG['title'], root_url %></h1>
-    <span><%= CONFIG['tagline'].html_safe %></span>
+    <div class='container'>
+      <h1><%= link_to CONFIG['title'], root_url %></h1>
+      <span><%= CONFIG['tagline'].html_safe %></span>
+    </div>
     <ul>
       <% if CONFIG['twitter'] %>
         <li><%= link_to '@' + CONFIG['twitter'], 'http://twitter.com/' + CONFIG['twitter'] %></li>
@@ -22,10 +25,10 @@
       <% if CONFIG['github'] %>
         <li><%= link_to 'github', 'https://github.com/' + CONFIG['github'] %></li>
       <% end %>
-      <% if CONFIG['email'] %>
+      <% if CONFIG['email'] and false %>
         <li><%= link_to 'say hi', "mailto:#{CONFIG['email']}?subject:whats up!" %></li>
       <% end %>
-      <li><%= link_to 'rss feed', '/posts.rss' %></li>
+      <li><%= link_to 'subscribe ', 'http://feeds.feedburner.com/ChrisBurnor' %></li>
     </ul>
     <span class="powered-by">
       Powered by <a href="http://github.com/natew/obtvse.git">Obtvse</a>
