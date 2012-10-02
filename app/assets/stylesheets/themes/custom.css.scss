@@ -1,1 +1,86 @@
 /* Insert your custom theme here */
+@mixin clearfix {
+  zoom: 1;
+  &:before { content: ''; display: block; }
+  &:after { content: ''; display: table; clear: both; }
+}
+$linkhover: purple;
+
+body, textarea, pre, input {
+  font-family: 'Antic Slab', Georgia, serif;
+  background-color: #eee;
+}
+
+.posts a {
+  border: none;
+}
+
+header {
+  @include clearfix;
+  padding: 0;
+  margin: 5px;
+  width: auto;
+  border: none;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  h1 {
+    padding: 0;
+    margin: 0;
+    a:hover {
+      color: $linkhover;
+    }
+  }
+  & > span {
+    padding: 0;
+    margin: 0;
+    float: left;
+  }
+  ul {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    @include clearfix;
+    display: block;
+    padding: 0;
+    margin: 0;
+    float: right;
+    li {
+      line-height: 35px;
+      padding: 0;
+      margin: 0;
+      float: left;
+      margin-left: 4px;
+      a {
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+  .powered-by {
+    display: none;
+  }
+}
+
+#container {
+  margin: 0;
+  padding: 0;
+  h1 {
+    a:hover {
+      color: $linkhover;
+    }
+  }
+  time {
+    display: none;
+  }
+  section {
+    margin: 0;
+    padding: 0;
+    border: none;
+    .contain {
+      margin: 0;
+      padding: 0;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
