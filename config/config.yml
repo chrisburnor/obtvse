@@ -1,6 +1,6 @@
 ---
 title:               Chris Burnor
-tagline:             Startup Philosophy
+tagline:             Professional Nerd
 login:               <%= ENV["obtvse_login"] ? ENV["obtvse_login"] : "username" %>
 password:            <%= ENV["obtvse_password"] ? ENV["obtvse_password"] : "password" %>
 name:                Chris Burnor
