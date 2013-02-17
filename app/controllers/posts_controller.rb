@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   layout :choose_layout
 
   def index
-    @posts = Post.page(params[:page]).per(10).where(draft:false).order("published_at")
+    @posts = Post.page(params[:page]).per(10).where(draft:false).where(is_page:false).order("published_at")
 
     respond_to do |format|
       format.html

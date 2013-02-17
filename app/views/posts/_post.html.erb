@@ -1,8 +1,10 @@
 <section id="post-<%= post.id %>">
   <div class="post contain">
-    <aside class="published-at">
-      <%= post.published_at_time %>
-    </aside>
+    <% if not post.is_page? %>
+      <aside class="published-at">
+        <%= post.published_at_time %>
+      </aside>
+    <% end %>
 
     <%- if post.external? -%>
       <h1 class="external">

@@ -48,6 +48,8 @@
       <div class="right">
         <%= f.label :draft %>
         <%= f.check_box :draft %>
+        <%= f.label :is_page %>
+        <%= f.check_box :is_page %>
         <%= f.submit 'Preview', :id => 'preview-button', :preview => true, :target => "_blank" %>
         <%= f.submit 'Save', :id => 'save-button' %>
       </div>
