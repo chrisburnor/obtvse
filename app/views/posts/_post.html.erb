@@ -1,7 +1,7 @@
 <section id="post-<%= post.id %>">
   <div class="post contain">
     <aside class="published-at">
-      <%= post.published_at.localtime.strftime "%B %e, %Y %l:%M %P" %>
+      <%= post.published_at_time %>
     </aside>
 
     <%- if post.external? -%>

@@ -27,6 +27,10 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def published_at_time
+    self.published_at.localtime.strftime "%B %e, %Y %l:%M %P"
+  end
+
   private
     def update_published_date
       if self.draft_changed? and self.draft == false and not self.published_at
