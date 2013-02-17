@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20130217012630) do
     t.string   "url"
     t.integer  "parent"
     t.datetime "published_at"
-    t.boolean  "is_page"
+    t.boolean  "is_page",      :default => false
   end
 
   create_table "sessions", :force => true do |t|
