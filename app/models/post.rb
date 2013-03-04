@@ -28,7 +28,7 @@ class Post < ActiveRecord::Base
   end
 
   def published_at_time
-    if not self.draft
+    if not self.draft and self.published_at?
       self.published_at.localtime.strftime "%B %e, %Y %l:%M %P"
     else
       "Draft"
